@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Page...</title>
+    <meta property="og:url" content="https://ryanvalle.github.io/params-js/">
+    <meta property="og:site_name" content="Test Page">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="http://shushi168.com/data/out/193/35819110-random-image.gif">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:site" content="@Disney">
+<meta property="twitter:title" content="DisneyYourself">
+<meta property="twitter:description" content="Hello World">
+<meta property="twitter:image" content="http://img.lum.dolimg.com/v1/images/image_flattener_share_bd73690f.jpeg">
+<meta property="twitter:image:alt" content="Disney Yourself">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        var getUrlParameter = function getUrlParameter(sParam) {
+          var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+              sURLVariables = sPageURL.split('&'),
+              sParameterName,
+              i;
+
+          for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+              return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+          }
+        };
+
+        $('meta[property="og:image"]').attr('content',getUrlParameter('image'));
+      })
+    </script>
+  </head>
+  <body>
+    <h1>Hello world</h1>
+    <p>Let's test some stuff out for param rendering</p>
+  </body>
+</html>
